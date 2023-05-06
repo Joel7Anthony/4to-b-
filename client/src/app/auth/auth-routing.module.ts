@@ -4,11 +4,11 @@ import { RouterModule, Routes } from '@angular/router';
 import { LoginComponent } from './login/login.component';
 import { RegisterComponent } from './register/register.component';
 
-const routes: Routes = [//rutas principales o raices
-  {path:'login', component:LoginComponent},
-  {path: 'register', component:RegisterComponent}
+  
+const routes:Routes = [
+  {path:'login', component: LoginComponent},
+  {path:'register', component: RegisterComponent},
 ]
-
 
 @NgModule({
   declarations: [],
@@ -17,4 +17,4 @@ const routes: Routes = [//rutas principales o raices
     RouterModule.forChild(routes)
   ]
 })
-export class AuthRoutingModuleModule { }
+export class AuthRoutingModule { }

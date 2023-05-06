@@ -1,27 +1,30 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { PagesComponent } from './pages.component';
-import { CategoryComponent } from './category/category.component';
-import { DashboardComponent } from './dashboard/dashboard.component';
+import { RouterModule,Routes } from '@angular/router';
 import { ProductsComponent } from './products/products.component';
+import { CategoriesComponent } from './categories/categories.component';
+import { DashboardComponent } from './dashboard/dashboard.component';
+import { PagesComponent } from './pages.component';
+import { SharedModule } from "../shared/shared.module";
 
 
 
 @NgModule({
-  declarations: [
-    PagesComponent,
-    CategoryComponent,
-    DashboardComponent,
-    ProductsComponent
-  ],
-  imports: [
-    CommonModule
-  ],
-  exports:[
-    PagesComponent,
-    CategoryComponent,
-    DashboardComponent,
-    ProductsComponent
-  ]
+    declarations: [
+        DashboardComponent,
+        ProductsComponent,
+        CategoriesComponent,
+        PagesComponent
+    ],
+    exports: [
+        DashboardComponent,
+        ProductsComponent,
+        CategoriesComponent
+    ],
+    imports: [
+        CommonModule,
+        SharedModule,
+        RouterModule
+    ]
 })
 export class PagesModule { }

@@ -1,16 +1,27 @@
 import { NgModule } from '@angular/core';
+import { CommonModule } from '@angular/common';
 import { RouterModule, Routes } from '@angular/router';
-import { DashboardComponent } from './pages/dashboard/dashboard.component';
-import { NotFoundPagesComponent } from './not-found-pages/not-found-pages.component';
 
-const routes: Routes = [//rutas principales o raices
-  {path:'',redirectTo:'/dashboard',pathMatch:'full'},
-  {path:"dashboard", component:DashboardComponent},
-  {path:"**", component:NotFoundPagesComponent},
+import { NoFoundPageComponent } from './noFoundPage/no-found-page.component';
+import { PagesRoutingModule } from './pages/pages-routing.module';
+import { AuthRoutingModule } from './auth/auth-routing.module';
+
+const routes:Routes = [
+
+  {path:'', redirectTo:'/dashboard', pathMatch:'full'},
+  {path:'**', component: NoFoundPageComponent},
 ];
 
 @NgModule({
-  imports: [RouterModule.forRoot(routes)],
-  exports: [RouterModule]
+  declarations: [],
+  imports: [
+    CommonModule,
+    RouterModule.forRoot(routes),
+    PagesRoutingModule,
+    AuthRoutingModule
+  ],
+  exports:[
+    RouterModule
+  ]
 })
 export class AppRoutingModule { }
