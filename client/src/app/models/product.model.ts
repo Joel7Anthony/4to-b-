@@ -6,7 +6,7 @@ export interface ProductModel {
   price: number;
   description: string;
   images: string[];
-  categoy: CategoryModel;
+  category: CategoryModel;
 }
 
 export interface CreateProductDto extends Omit<ProductModel, 'id' | 'category'>{
