@@ -5,8 +5,6 @@ import { AboutComponent } from './about/about.component';
 import { ProductsComponent } from './products/products.component';
 import { ContactComponent } from './contact/contact.component';
 
-
-
 @NgModule({
   declarations: [
     HomeComponent,
@@ -22,6 +20,6 @@ import { ContactComponent } from './contact/contact.component';
     AboutComponent,
     ProductsComponent,
     ContactComponent
-  ],
+  ]
 })
 export class WebModule { }
