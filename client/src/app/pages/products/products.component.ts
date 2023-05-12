@@ -7,7 +7,7 @@ import { ProductHttpService } from 'src/app/services/product.service'
   templateUrl: './products.component.html',
   styleUrls: ['./products.component.css']
 })
-export class ProductComponent implements OnInit {
+export class ProductsComponent implements OnInit {
    products:ProductModel[] = [];
    selectedProduct: UpdateProductDto = {title:'', price:0, description:''};
 
