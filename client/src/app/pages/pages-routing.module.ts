@@ -5,19 +5,16 @@ import { PagesComponent } from './pages.component';
 import { NoFoundPageComponent } from '../noFoundPage/no-found-page.component';
 import { CategoriesComponent } from './categories/categories.component';
 import { DashboardComponent } from './dashboard/dashboard.component';
-import { ProductsComponent } from './products/products.component';
+import { ProductComponent } from './products/products.component';
 
 const routes:Routes = [
-  //rutas protegidas
   {path:'dashboard', component: PagesComponent,
   children: [
   {path:'', component: DashboardComponent},
-  {path:'products', component: ProductsComponent},
+  {path:'product', component: ProductComponent},
   {path:'categories', component: CategoriesComponent},
   {path:'', redirectTo:'/dashboard', pathMatch:'full'},
   ]},
-  /*
-  {path:'**', component: NoFoundPageComponent},*/
 ];
 
 @NgModule({

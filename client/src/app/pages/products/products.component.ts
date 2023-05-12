@@ -7,7 +7,7 @@ import { ProductHttpService } from 'src/app/services/product.service'
   templateUrl: './products.component.html',
   styleUrls: ['./products.component.css']
 })
-export class ProductsComponent implements OnInit {
+export class ProductComponent implements OnInit {
    products:ProductModel[] = [];
    selectedProduct: UpdateProductDto = {title:'', price:0, description:''};
 
@@ -16,11 +16,11 @@ export class ProductsComponent implements OnInit {
   }
   
   ngOnInit(): void {
-    this.getProducts();
-    //this.getProduct();
+    //this.getProducts();
+    //this.getProduct(57);
     //this.createProduct();
-    //this.updateProduct();
-    //this.deleteProduct();
+    this.updateProduct();
+    //this.deleteProduct(204);
   }
 
   getProducts(){
@@ -41,16 +41,30 @@ export class ProductsComponent implements OnInit {
     )
   }
 
-  createProduct(product: CreateProductDto){
-    this.productHttpService.store(product).subscribe(
+  createProduct(){
+    const data = {
+      title: 'adidas Ekstraklasa Trn Balón De Fútbol',
+      price: 2936.9,
+      description: 'adidas Ekstraklasa Trn Balón De Fútbol, Unisex Adulto',
+      images: [
+        'https://m.media-amazon.com/images/I/61phFEE9ttL._AC_SL1200_.jpg'
+      ],
+      categoryId: 1,
+    };
+    this.productHttpService.store(data).subscribe(
       response => {
         console.log(response);
       }
     )
   }
 
-  updateProduct(id: ProductModel['id'], product: UpdateProductDto){
-    this.productHttpService.update(id, product).subscribe(
+  updateProduct(){
+    const data = {
+      title: 'Adidas X Ghosted',
+      price: 49.550,
+      descripcion: 'pupos de fútbol sin cordones que tienen fibra de carbono Carbitex - Erling Halaand'
+    };
+    this.productHttpService.update(204, data).subscribe(
       response =>{
         console.log(response);
       }

@@ -5,6 +5,7 @@ import { AppComponent } from './app.component';
 import { SharedModule } from "./shared/shared.module";
 import { AppRoutingModule } from './app-routing.module';
 import { PagesModule } from './pages/pages.module';
+import { HttpClientModule } from '@angular/common/http';
 
 @NgModule({
     declarations: [
@@ -16,7 +17,8 @@ import { PagesModule } from './pages/pages.module';
         BrowserModule,
         SharedModule,
         PagesModule,
-        AppRoutingModule
+        AppRoutingModule,
+        HttpClientModule
     ]
 })
 export class AppModule { }
