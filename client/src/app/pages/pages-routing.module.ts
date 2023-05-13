@@ -5,13 +5,13 @@ import { PagesComponent } from './pages.component';
 import { NoFoundPageComponent } from '../noFoundPage/no-found-page.component';
 import { CategoriesComponent } from './categories/categories.component';
 import { DashboardComponent } from './dashboard/dashboard.component';
-import { ProductComponent } from './products/products.component';
+import { ProductsComponent } from './products/products.component';
 
 const routes:Routes = [
   {path:'dashboard', component: PagesComponent,
   children: [
   {path:'', component: DashboardComponent},
-  {path:'product', component: ProductComponent},
+  {path:'products', component: ProductsComponent},
   {path:'categories', component: CategoriesComponent},
   {path:'', redirectTo:'/dashboard', pathMatch:'full'},
   ]},
